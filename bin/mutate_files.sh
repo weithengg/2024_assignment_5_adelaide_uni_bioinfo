@@ -8,9 +8,7 @@ FULL_PATH_TO_SCRIPT="$(realpath "${BASH_SOURCE[-1]}")"
 BASE_DIR=$(dirname ${FULL_PATH_TO_SCRIPT})
 
 ANSWERS_FILE=answers.txt
-if [ -e ${ANSWERS_FILE} ]; then
-  rm ${ANSWERS_FILE}
-fi
+echo "filename,commit,message" > ${ANSWERS_FILE}
 
 for filename in "$@"
 do
@@ -19,6 +17,5 @@ do
     git add ${filename}
     git commit -m "${FAKE_REASON}"
     GIT_COMMIT=$(git rev-parse HEAD)
-    echo "filename,commit,message" >> ${ANSWERS_FILE}
     echo "${filename},${GIT_COMMIT},${FAKE_REASON}" >> ${ANSWERS_FILE}
 done
