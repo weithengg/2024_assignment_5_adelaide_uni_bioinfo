@@ -5,7 +5,7 @@ import sys
 
 MAX_UPPERCASE = 3
 MAX_XXX = 3
-MUTATE_CHANCE = 0.15
+MUTATE_CHANCE = 0.2
 
 def main():
     script_name = sys.argv[0]
@@ -21,7 +21,7 @@ def main():
     with open(filename, "wt") as f:
         for line in original_lines:
             words = line.split(" ")
-            if len(words) > 1 and random() < 0.5:  # Skip 50% of actual text lines
+            if len(words) > 1 and random() < 0.6:  # Skip 40% of actual text lines
                 new_words = []
                 for word in words:
                     if num_uppercase < MAX_UPPERCASE:
