@@ -1,5 +1,12 @@
 ## 2024-10-09
 
+### Changed 
+
+- Converted UPPERCASE words to lowercase in data/a1875420.txt to address the low severity issue (see issue #28)
+
+
+## 2024-10-09
+
 ### Changed
 
 - Removed 'XXXXXXX' from data/a1875420.txt to fix the high severity issue (see issue #25)
